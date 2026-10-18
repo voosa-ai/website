@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voosa · Architecture by the people</title>
+<meta name="description" content="Voosa is the company home for the apps your people build with AI. Hosted, connected, and compliant by default.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#152B62;--red:#F0544F;--paper:#F6F4EF;--grid:#D9E3F6;--mortar:#8E949C}
+*{box-sizing:border-box;margin:0}
+body{font-family:Sora,system-ui,sans-serif;color:var(--blue);background:var(--paper);
+ background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:22px;color:var(--blue);text-decoration:none}
+.btn{display:inline-block;background:var(--red);color:#fff;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--blue);border:2px solid var(--blue)}
+.label{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.hero{padding:72px 0 56px}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.08;margin:14px 0 20px;max-width:14ch}
+.hero p{font-size:20px;max-width:46ch;color:#2d3f6e}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;padding:24px 0 64px}
+.card{background:#fff;border:1px solid var(--grid);border-radius:16px;padding:26px}
+.card h3{font-size:22px;margin:8px 0}
+.card p{color:#3c4a6b}
+.band{background:var(--blue);color:var(--paper);border-radius:20px;padding:40px;margin-bottom:64px}
+.band h2{font-size:30px;margin-bottom:14px}
+.band ul{padding-left:20px;display:grid;gap:6px;color:var(--grid)}
+footer{padding:28px 0 40px;color:var(--mortar);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <a class="logo" href="/"><svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><g fill="#152B62"><rect x="1" y="16" width="6" height="13" rx="1"/><rect x="27" y="16" width="6" height="13" rx="1"/><path d="M3 15 9 7l4 4-5 6z"/><path d="M31 15 25 7l-4 4 5 6z"/></g><path d="M11 3h12l-6 11z" fill="#F0544F"/></svg>voosa</a>
+ <a class="btn" href="mailto:hello@voosa.ai">Talk to us</a>
+</header>
+<section class="hero">
+ <div class="label">Architecture by the people</div>
+ <h1>A home for the apps your people build with AI.</h1>
+ <p>Your team is already building tools in Claude, Lovable, Replit and Codex. Voosa hosts them, connects them to your company's records, and keeps them compliant by default.</p>
+ <div class="cta"><a class="btn" href="mailto:hello@voosa.ai?subject=Voosa%20early%20access">Get early access</a><a class="btn ghost" href="#how">How it works</a></div>
+</section>
+<section id="how" class="steps">
+ <div class="card"><div class="label">01 · Build</div><h3>Build anywhere</h3><p>Upload any app, from any AI tool. Anyone can try it right away on sample data.</p></div>
+ <div class="card"><div class="label">02 · Vote</div><h3>Let the best rise</h3><p>Everyone sees the catalog and upvotes the apps that actually help their work.</p></div>
+ <div class="card"><div class="label">03 · Architect</div><h3>Connect into one system</h3><p>AI maps how the top apps fit together, and we connect them to shared company data.</p></div>
+</section>
+<section class="band">
+ <h2>Compliant by default</h2>
+ <ul><li>Audit trail of every change and approval</li><li>Owner approval before an app touches real data</li><li>Role-based access for every person</li><li>Your own AWS account, run and billed by us</li><li>Your code stays yours</li></ul>
+</section>
+<footer><span>© 2026 Voosa · voo-SWAHR, from voussoir, a stone in an arch</span><a href="mailto:hello@voosa.ai" style="color:inherit">hello@voosa.ai</a></footer>
+</div>
+</body>
+</html>
