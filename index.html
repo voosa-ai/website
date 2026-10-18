@@ -1,57 +1,235 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Voosa · Architecture by the people</title>
-<meta name="description" content="Voosa is the company home for the apps your people build with AI. Hosted, connected, and compliant by default.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<meta name="description" content="Voosa is the enterprise home for the apps your people build with AI: connected to your company's data, compliant by default, and always yours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
-:root{--blue:#152B62;--red:#F0544F;--paper:#F6F4EF;--grid:#D9E3F6;--mortar:#8E949C}
-*{box-sizing:border-box;margin:0}
-body{font-family:Sora,system-ui,sans-serif;color:var(--blue);background:var(--paper);
- background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;line-height:1.55}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:22px;color:var(--blue);text-decoration:none}
-.btn{display:inline-block;background:var(--red);color:#fff;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none}
-.btn.ghost{background:transparent;color:var(--blue);border:2px solid var(--blue)}
-.label{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
-.hero{padding:72px 0 56px}
-h1{font-size:clamp(36px,6vw,64px);line-height:1.08;margin:14px 0 20px;max-width:14ch}
-.hero p{font-size:20px;max-width:46ch;color:#2d3f6e}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;padding:24px 0 64px}
-.card{background:#fff;border:1px solid var(--grid);border-radius:16px;padding:26px}
-.card h3{font-size:22px;margin:8px 0}
-.card p{color:#3c4a6b}
-.band{background:var(--blue);color:var(--paper);border-radius:20px;padding:40px;margin-bottom:64px}
-.band h2{font-size:30px;margin-bottom:14px}
-.band ul{padding-left:20px;display:grid;gap:6px;color:var(--grid)}
-footer{padding:28px 0 40px;color:var(--mortar);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+body{margin:0}
+a{color:#152B62}a:hover{color:#0C1A3E}
+.grid-dark{background-color:#0F2150;background-image:linear-gradient(rgba(217,227,246,0.07) 1px, transparent 1px),linear-gradient(90deg, rgba(217,227,246,0.07) 1px, transparent 1px);background-size:32px 32px}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{display:flex;width:max-content;animation:scroll-left 80s linear infinite}
+.track-rev{animation-name:scroll-right;animation-duration:70s}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes scroll-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media (prefers-reduced-motion: reduce){.track{animation:none}}
+.grid-paper{background-color:#F6F4EF;background-image:linear-gradient(#D9E3F6 1px, transparent 1px),linear-gradient(90deg, #D9E3F6 1px, transparent 1px);background-size:32px 32px}
 </style>
+<style>h1{font-size:clamp(44px,8vw,72px)!important}</style>
 </head>
 <body>
-<div class="wrap">
-<header>
- <a class="logo" href="/"><svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><g fill="#152B62"><rect x="1" y="16" width="6" height="13" rx="1"/><rect x="27" y="16" width="6" height="13" rx="1"/><path d="M3 15 9 7l4 4-5 6z"/><path d="M31 15 25 7l-4 4 5 6z"/></g><path d="M11 3h12l-6 11z" fill="#F0544F"/></svg>voosa</a>
- <a class="btn" href="mailto:hello@voosa.ai">Talk to us</a>
-</header>
-<section class="hero">
- <div class="label">Architecture by the people</div>
- <h1>A home for the apps your people build with AI.</h1>
- <p>Your team is already building tools in Claude, Lovable, Replit and Codex. Voosa hosts them, connects them to your company's records, and keeps them compliant by default.</p>
- <div class="cta"><a class="btn" href="mailto:hello@voosa.ai?subject=Voosa%20early%20access">Get early access</a><a class="btn ghost" href="#how">How it works</a></div>
-</section>
-<section id="how" class="steps">
- <div class="card"><div class="label">01 · Build</div><h3>Build anywhere</h3><p>Upload any app, from any AI tool. Anyone can try it right away on sample data.</p></div>
- <div class="card"><div class="label">02 · Vote</div><h3>Let the best rise</h3><p>Everyone sees the catalog and upvotes the apps that actually help their work.</p></div>
- <div class="card"><div class="label">03 · Architect</div><h3>Connect into one system</h3><p>AI maps how the top apps fit together, and we connect them to shared company data.</p></div>
-</section>
-<section class="band">
- <h2>Compliant by default</h2>
- <ul><li>Audit trail of every change and approval</li><li>Owner approval before an app touches real data</li><li>Role-based access for every person</li><li>Your own AWS account, run and billed by us</li><li>Your code stays yours</li></ul>
-</section>
-<footer><span>© 2026 Voosa · voo-SWAHR, from voussoir, a stone in an arch</span><a href="mailto:hello@voosa.ai" style="color:inherit">hello@voosa.ai</a></footer>
+<div style="width: 100%; background: #F6F4EF; font-family: 'Sora', sans-serif; color: #152B62; font-size: 17px; line-height: 1.6">
+
+<header style="background: #F6F4EF; border-bottom: 1px solid #E2DDD2">
+<div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #152B62">
+<svg width="44" height="25" viewBox="0 32 200 112" aria-hidden="true">
+<g data-arch="#152B62"></g>
+</svg>
+<span style="font-size: 26px; font-weight: 600; letter-spacing: -1px">voosa</span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px">
+<a href="#how" style="text-decoration: none">How it works</a>
+<a href="#compliance" style="text-decoration: none">Compliance</a>
+<a href="#who" style="text-decoration: none">Who it's for</a>
+<a href="#join" style="text-decoration: none; background: #152B62; color: #FFFFFF; padding: 12px 20px; border-radius: 999px; font-weight: 600">Get early access</a>
+</nav>
 </div>
+</header>
+
+<section id="top" class="grid-dark" style="color: #FFFFFF">
+<div style="max-width: 1160px; margin: 0 auto; padding: 104px 24px 72px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 999 1 540px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #FF8A84">// The enterprise home for AI-built apps</div>
+<h1 style="margin: 0; font-size: 72px; line-height: 1; font-weight: 700; letter-spacing: -3px; color: #FFFFFF">Architecture by the <span style="text-decoration: underline wavy #F0544F; text-decoration-thickness: 4px; text-underline-offset: 14px">people</span>.</h1>
+<p style="margin: 0; font-size: 20px; max-width: 600px; color: #C9D5EE">Your team is already building their own tools with AI. Voosa is where those builds live: connected to your company's data, compliant by default, and always yours.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; padding-top: 8px">
+<a href="#join" style="text-decoration: none; background: #FFFFFF; color: #152B62; padding: 16px 28px; border-radius: 999px; font-weight: 600">Get early access →</a>
+<a href="#how" style="text-decoration: none; border: 1px solid rgba(217,227,246,0.5); color: #FFFFFF; padding: 15px 27px; border-radius: 999px; font-weight: 600">Show me how</a>
+</div>
+</div>
+<div style="flex: 1 1 320px; display: flex; justify-content: center">
+<svg width="360" height="202" viewBox="0 32 200 112" role="img" aria-label="Voosa arch: blue stones holding a red keystone">
+<g data-arch="#FFFFFF"></g>
+</svg>
+</div>
+</div>
+<div style="padding: 0 0 88px; display: flex; flex-direction: column; gap: 14px">
+<p style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); margin: 0">Bring builds from any AI or no-code tool, made by any team in your company.</p>
+<div style="max-width: 1160px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #9FB0D3">$ import --from</div>
+<div class="marquee" aria-hidden="true">
+<div class="track">
+<template data-chip="tools"><span style="font-family: 'IBM Plex Mono', monospace; background: rgba(217,227,246,0.08); border: 1px solid rgba(217,227,246,0.25); border-radius: 999px; padding: 6px 14px; margin-right: 10px; font-size: 14px; color: #D9E3F6; white-space: nowrap"></span></template>
+</div>
+</div>
+<div style="max-width: 1160px; width: 100%; margin: 0 auto; padding: 10px 24px 0; box-sizing: border-box; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #9FB0D3">$ built --by</div>
+<div class="marquee" aria-hidden="true">
+<div class="track track-rev">
+<template data-chip="teams"><span style="background: rgba(240,84,79,0.12); border: 1px solid rgba(255,138,132,0.4); border-radius: 999px; padding: 6px 14px; margin-right: 10px; font-size: 14px; color: #FFD9D6; white-space: nowrap"></span></template>
+</div>
+</div>
+</div>
+</section>
+
+<section id="how" style="background: #FFFFFF">
+<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #C2302C">01 / How it works</div>
+<h2 style="margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -1.5px">Build. Vote. Architect.</h2>
+<p style="margin: 0; color: #33456F">You don't build for Voosa. Build however you like, then bring it home. Three steps, zero gatekeeping.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+
+<div style="background: #F6F4EF; border-radius: 18px; padding: 32px; border: 2px solid #152B62; box-shadow: 6px 6px 0 #152B62; display: flex; flex-direction: column; gap: 14px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #5A6788">01</div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600">Build anywhere</h3>
+<p style="margin: 0; color: #33456F">Anyone on your team can build apps, in any tool. Voosa hosts them all, versions them, and puts every one behind your company login.</p>
+</div>
+
+<div style="background: #F6F4EF; border-radius: 18px; padding: 32px; border: 2px solid #152B62; box-shadow: 6px 6px 0 #152B62; display: flex; flex-direction: column; gap: 14px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #5A6788">02</div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600">Vote</h3>
+<p style="margin: 0; color: #33456F">Every build lands in your company's app catalog. People try each other's tools and upvote what actually helps. The best ideas rise on merit, not job title.</p>
+</div>
+
+<div style="background: #152B62; color: #FFFFFF; border-radius: 18px; padding: 32px; border: 2px solid #152B62; box-shadow: 6px 6px 0 #F0544F; display: flex; flex-direction: column; gap: 14px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #FF8A84">03</div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600">Architect</h3>
+<p style="margin: 0; color: #D9E3F6">Voosa connects the winners to shared company records (clients, sites, projects, people) and spots overlaps, so a pile of separate tools becomes one system.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="compliance" style="background: #F6F4EF">
+<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #C2302C">02 / Compliance</div>
+<h2 style="margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -1.5px">Compliant by default.</h2>
+<p style="margin: 0; color: #33456F">Your builders shouldn't have to think about audit trails. On Voosa, every app inherits them automatically, so a technician's weekend build can carry the same compliance weight as enterprise software.</p>
+<p style="margin: 0; color: #33456F">Made for firms where the paperwork <em>is</em> the business: inspection reports, chain-of-custody records, client sign-offs.</p>
+</div>
+<div style="flex: 1 1 440px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 2px solid #152B62; border-radius: 16px; padding: 24px; box-shadow: 4px 4px 0 #152B62">
+<h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Audit trail</h3>
+<p style="margin: 0; font-size: 15px; color: #33456F">Who did what, when, in every app.</p>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #152B62; border-radius: 16px; padding: 24px; box-shadow: 4px 4px 0 #152B62">
+<h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Approvals and sign-offs</h3>
+<p style="margin: 0; font-size: 15px; color: #33456F">Route work from technician to manager to client.</p>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #152B62; border-radius: 16px; padding: 24px; box-shadow: 4px 4px 0 #152B62">
+<h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Access by role</h3>
+<p style="margin: 0; font-size: 15px; color: #33456F">One company login. People see only what they should.</p>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #152B62; border-radius: 16px; padding: 24px; box-shadow: 4px 4px 0 #152B62">
+<h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Records retention</h3>
+<p style="margin: 0; font-size: 15px; color: #33456F">Keep what regulators require, for as long as they require it.</p>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #152B62; border-radius: 16px; padding: 24px; box-shadow: 4px 4px 0 #152B62">
+<h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Change history</h3>
+<p style="margin: 0; font-size: 15px; color: #33456F">Every version of every app, ready to roll back.</p>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #152B62; border-radius: 16px; padding: 24px; box-shadow: 4px 4px 0 #152B62">
+<h3 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Shared records</h3>
+<p style="margin: 0; font-size: 15px; color: #33456F">One source for clients, sites, and projects.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: #FFFFFF">
+<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #C2302C">03 / Ownership</div>
+<h2 style="margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -1.5px">Your special sauce stays yours.</h2>
+<p style="margin: 0; color: #33456F">The tools your team builds are your competitive edge. Voosa never owns them. We provide the plumbing; you keep every line of code.</p>
+</div>
+<ul style="flex: 1 1 360px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
+<li style="background: #F6F4EF; border-radius: 14px; padding: 18px 22px; border: 2px solid #152B62"><strong style="font-weight: 600">You own your code.</strong> Every app you bring stays your intellectual property.</li>
+<li style="background: #F6F4EF; border-radius: 14px; padding: 18px 22px; border: 2px solid #152B62"><strong style="font-weight: 600">No lock-in.</strong> Export any app and its data whenever you want.</li>
+<li style="background: #F6F4EF; border-radius: 14px; padding: 18px 22px; border: 2px solid #152B62"><strong style="font-weight: 600">Keep your tools.</strong> Build in whatever AI tool your team prefers, today and tomorrow.</li>
+</ul>
+</div>
+</section>
+
+<section style="background: #152B62; color: #FFFFFF">
+<div style="max-width: 1160px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px">
+<svg width="120" height="67" viewBox="0 32 200 112" aria-hidden="true">
+<g data-arch="#FFFFFF"></g>
+</svg>
+<h2 style="margin: 0; font-size: 48px; line-height: 1.12; font-weight: 700; letter-spacing: -1.5px; max-width: 820px">Your work is the keystone.</h2>
+<p style="margin: 0; font-size: 19px; color: #D9E3F6; max-width: 720px">In an arch, the keystone is the piece everything depends on. In your company, it's what your people build: the tools that capture how you do the work better than anyone else. Voosa is the stones on either side, holding your keystone in place. <strong style="font-weight: 600; color: #FFFFFF">We support the tools that make you unique.</strong></p>
+<p style="margin: 20px 0 0; font-size: 13px; line-height: 1.6; color: #8D9DC2; max-width: 560px"><span style="font-weight: 600; color: #B4C2E0">vous·soir</span> <span style="font-family: 'IBM Plex Mono', monospace">/voo-SWAHR/</span> <em>n.</em> One of the wedge-shaped stones that form an arch, holding the keystone in place.</p>
+</div>
+</section>
+
+<section id="who" style="background: #F6F4EF">
+<div style="max-width: 1160px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #C2302C">04 / Who it's for</div>
+<h2 style="margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -1.5px">Growing teams with real compliance on the line.</h2>
+<p style="margin: 0; color: #33456F">Companies of 50 to 250 people whose staff are already building with AI, but who can't afford a tool that breaks the audit chain. No platform team? No problem. Voosa is the platform team.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<span style="background: #FFFFFF; border: 1px solid #E2DDD2; border-radius: 999px; padding: 10px 20px; font-size: 15px">Environmental services</span>
+<span style="background: #FFFFFF; border: 1px solid #E2DDD2; border-radius: 999px; padding: 10px 20px; font-size: 15px">Fire and life-safety inspection</span>
+<span style="background: #FFFFFF; border: 1px solid #E2DDD2; border-radius: 999px; padding: 10px 20px; font-size: 15px">EHS consulting</span>
+<span style="background: #FFFFFF; border: 1px solid #E2DDD2; border-radius: 999px; padding: 10px 20px; font-size: 15px">Construction QA/QC</span>
+<span style="background: #FFFFFF; border: 1px solid #E2DDD2; border-radius: 999px; padding: 10px 20px; font-size: 15px">Engineering and testing</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 2px solid #152B62; border-radius: 16px; padding: 24px; box-shadow: 4px 4px 0 #F0544F"><h3 style="margin: 0 0 6px; font-size: 18px; font-weight: 600">Operations leaders</h3><p style="margin: 0; font-size: 15px; color: #33456F">Turn scattered tools into one system the whole company runs on.</p></div>
+<div style="background: #FFFFFF; border: 2px solid #152B62; border-radius: 16px; padding: 24px; box-shadow: 4px 4px 0 #F0544F"><h3 style="margin: 0 0 6px; font-size: 18px; font-weight: 600">Compliance and QA managers</h3><p style="margin: 0; font-size: 15px; color: #33456F">Say yes to new tools without losing the audit trail.</p></div>
+<div style="background: #FFFFFF; border: 2px solid #152B62; border-radius: 16px; padding: 24px; box-shadow: 4px 4px 0 #F0544F"><h3 style="margin: 0 0 6px; font-size: 18px; font-weight: 600">Everyday builders</h3><p style="margin: 0; font-size: 15px; color: #33456F">Share what you made, and get credit when it takes off.</p></div>
+</div>
+</div>
+</section>
+
+<section id="join" class="grid-paper">
+<div style="max-width: 760px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
+<h2 style="margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -1.5px">Give your team's builds a home.</h2>
+<p style="margin: 0; color: #33456F">We're opening early access to a small group of companies. Leave your email and we'll be in touch.</p>
+<form action="mailto:phil@voosa.ai" method="get" enctype="text/plain" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; padding-top: 6px">
+<label for="email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Work email</label>
+<input id="email" name="body" type="email" required placeholder="you@company.com" style="flex: 1 1 280px; max-width: 380px; min-height: 52px; box-sizing: border-box; padding: 0 18px; font-family: 'Sora', sans-serif; font-size: 16px; color: #152B62; background: #FFFFFF; border: 2px solid #152B62; border-radius: 999px">
+<button type="submit" style="min-height: 52px; padding: 0 28px; font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 600; color: #FFFFFF; background: #152B62; border: none; border-radius: 999px; cursor: pointer; box-shadow: 4px 4px 0 #F0544F">Count me in →</button>
+</form>
+</div>
+</section>
+
+<footer style="background: #0F2150; color: #D9E3F6">
+<div style="max-width: 1160px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; font-size: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<svg width="40" height="22" viewBox="0 32 200 112" aria-hidden="true">
+<g data-arch="#FFFFFF"></g>
+</svg>
+<span style="font-size: 20px; font-weight: 600; color: #FFFFFF; letter-spacing: -0.5px">voosa</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding-left: 8px">Architecture by the people.</span>
+</div>
+<div>© 2026 Voosa · voosa.ai · <a href="mailto:phil@voosa.ai" style="color:#D9E3F6">phil@voosa.ai</a></div>
+</div>
+</footer>
+
+</div>
+<script>
+(function(){
+var CY=104,BASE=136,RED='#F0544F';
+function pt(r,d){var t=d*Math.PI/180;return[(100+r*Math.cos(t)).toFixed(2),(CY-r*Math.sin(t)).toFixed(2)]}
+function wedge(R,r,a1,a2){var p1=pt(R,a1),p2=pt(R,a2),p3=pt(r,a2),p4=pt(r,a1);return'M'+p1[0]+' '+p1[1]+' A'+R+' '+R+' 0 0 1 '+p2[0]+' '+p2[1]+' L'+p3[0]+' '+p3[1]+' A'+r+' '+r+' 0 0 0 '+p4[0]+' '+p4[1]+' Z'}
+function arch(stone){var n=5,gap=6,key=44,span=(180-gap*(n-1)-key)/(n-1),a=180,s='';for(var i=0;i<n;i++){var k=i===2,w=k?key:span;s+='<path d="'+wedge(64,26,a,a-w)+'" fill="'+(k?RED:stone)+'"/>';a=a-w-gap}
+s+='<path d="M36 '+(CY+5)+' H74 V'+BASE+' H36 Z" fill="'+stone+'"/><path d="M126 '+(CY+5)+' H164 V'+BASE+' H126 Z" fill="'+stone+'"/>';return s}
+document.querySelectorAll('g[data-arch]').forEach(function(g){g.innerHTML=arch(g.getAttribute('data-arch'))});
+var L={tools:['claude-code','codex','lovable','replit','cursor','bolt','v0','windsurf','github-copilot','gemini-cli','firebase-studio','base44','bubble','glide','softr','retool','airtable','power-apps','power-automate','zapier','make','n8n','apps-script','excel-macros','python','javascript','html','streamlit','jupyter','supabase'],
+teams:['Engineering','Operations','Architecture','Field staff','Technicians','Project management','Safety and compliance','QA/QC','Inspectors','Lab staff','Estimating','Scheduling','Accounting','Finance','HR','IT','Marketing','Sales','Procurement','Fleet','Customer service','Admin','Leadership']};
+document.querySelectorAll('template[data-chip]').forEach(function(t){var list=L[t.getAttribute('data-chip')],p=t.parentNode;list.concat(list).forEach(function(n){var el=t.content.firstElementChild.cloneNode();el.textContent=n;p.appendChild(el)});t.remove()});
+})();
+</script>
 </body>
 </html>
